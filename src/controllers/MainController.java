@@ -127,9 +127,10 @@ public class MainController {
         String services = null;
         for(String properties: propertiesService){
             if(VILLA.equals(fileName)){
-                services = new Villa();
+                //services = new Villa();
             }
         }
+        return servicesList;
     }
     private static void showAllServiceNotDup(String fileName) {
     }

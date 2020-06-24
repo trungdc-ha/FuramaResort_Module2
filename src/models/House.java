@@ -8,6 +8,7 @@ public class House extends Services {
     public House() {
     }
 
+
     public House(String roomStandard, String facilites, int numberOfFloor) {
         this.roomStandard = roomStandard;
         this.facilites = facilites;
@@ -47,9 +48,15 @@ public class House extends Services {
 
     @Override
     public String showInfor() {
+        return this.toString();
+    }
+
+    @Override
+    public String toString() {
         return "***************** HOUSE *****************" + super.toString() +
                 "\nRoom Standard: " + roomStandard
                 + "\nFacilities: " + facilites
                 + "\nNumber of Floor: " + numberOfFloor;
     }
+
 }

@@ -1,10 +1,7 @@
 package views;
 
 import models.Customer;
-import service.impl.FuncCustomerFileCSV;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 
 public class NameComparator implements Comparator<Customer> {

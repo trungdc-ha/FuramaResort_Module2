@@ -46,4 +46,8 @@ public class MainController {
                 break;
         }
     }
+
+    public static void main(String[] args) {
+        MainController.processMain();
+    }
 }

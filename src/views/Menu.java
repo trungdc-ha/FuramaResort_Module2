@@ -2,7 +2,6 @@ package views;
 
 import controllers.MainController;
 import controllers.ServiceController;
-import service.impl.FuncWriteServicesFileCSV;
 
 import java.util.Scanner;
 
@@ -27,7 +26,6 @@ public class Menu {
                 "4.\tBack to menu\n" +
                 "5.\tExit\n");
         Scanner input = new Scanner(System.in);
-        //String number = input.nextLine();
         switch (input.nextLine()){
             case "1":
                 ServiceController.addVillaService();

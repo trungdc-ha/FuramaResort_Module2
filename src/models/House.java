@@ -1,28 +1,55 @@
 package models;
 
 public class House extends Services {
-    private String standardRoom;
-    private String otherDescription;
-    private int numberOfFloors;
+    private String roomStandard;
+    private String facilites;
+    private int numberOfFloor;
 
-    public House(String id, String serviceName, double areaUse, double rentCost, int numberOfPeoples, String typeRent, String standardRoom, String otherDescription, int numberOfFloors) {
-        super(id, serviceName, areaUse, rentCost, numberOfPeoples, typeRent);
-        this.standardRoom = standardRoom;
-        this.otherDescription = otherDescription;
-        this.numberOfFloors = numberOfFloors;
+    public House() {
+    }
+
+    public House(String roomStandard, String facilites, int numberOfFloor) {
+        this.roomStandard = roomStandard;
+        this.facilites = facilites;
+        this.numberOfFloor = numberOfFloor;
+    }
+
+    public House(String id, String serviceName, float areaUsing, double rentalFee, int maxOccupancy, String typeRental, String roomStandard, String facilites, int numberOfFloor) {
+        super(id, serviceName, areaUsing, rentalFee, maxOccupancy, typeRental);
+        this.roomStandard = roomStandard;
+        this.facilites = facilites;
+        this.numberOfFloor = numberOfFloor;
+    }
+
+    public String getRoomStandard() {
+        return roomStandard;
+    }
+
+    public String getFacilites() {
+        return facilites;
+    }
+
+    public int getnumberOfFloor() {
+        return numberOfFloor;
+    }
+
+    public void setRoomStandard(String roomStandard) {
+        this.roomStandard = roomStandard;
+    }
+
+    public void setFacilites(String facilites) {
+        this.facilites = facilites;
+    }
+
+    public void setnumberOfFloor(int numberOfFloor) {
+        this.numberOfFloor = numberOfFloor;
     }
 
     @Override
-    public void showInfor() {
-        System.out.println(this.toString());
-    }
-
-    @Override
-    public String toString() {
-        return "House{" +
-                "standardRoom='" + standardRoom + '\'' +
-                ", otherDescription='" + otherDescription + '\'' +
-                ", numberOfFloors=" + numberOfFloors +
-                '}' + toString();
+    public String showInfor() {
+        return "***************** HOUSE *****************" + super.toString() +
+                "\nRoom Standard: " + roomStandard
+                + "\nFacilities: " + facilites
+                + "\nNumber of Floor: " + numberOfFloor;
     }
 }

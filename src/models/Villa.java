@@ -1,35 +1,67 @@
 package models;
 
 public class Villa extends Services {
-    private String standardRoom;
-    private String otherDescription;
-    private double areaPool;
-    private int numberOfFloors;
-
-    public Villa(String id, String serviceName, double areaUse, double rentCost, int numberOfPeoples, String typeRent, String standardRoom, String otherDescription, double areaPool, int numberOfFloors) {
-        super(id, serviceName, areaUse, rentCost, numberOfPeoples, typeRent);
-        this.standardRoom = standardRoom;
-        this.otherDescription = otherDescription;
-        this.areaPool = areaPool;
-        this.numberOfFloors = numberOfFloors;
-    }
+    private String roomStandard;
+    private String facilites;
+    private float areaSwimmingPool;
+    private int numberOfFloor;
 
     public Villa() {
-        super();
+    }
+
+    public Villa(String roomStandard, String facilites, Float areaSwimmingPool, int numberOfFloor) {
+        this.roomStandard = roomStandard;
+        this.facilites = facilites;
+        this.areaSwimmingPool = areaSwimmingPool;
+        this.numberOfFloor = numberOfFloor;
+    }
+
+    public Villa(String id, String serviceName, float areaUsing, double rentalFee, int maxOccupancy, String typeRental, String roomStandard, String facilites, Float areaSwimmingPool, int numberOfFloor) {
+        super(id, serviceName, areaUsing, rentalFee, maxOccupancy, typeRental);
+        this.roomStandard = roomStandard;
+        this.facilites = facilites;
+        this.areaSwimmingPool = areaSwimmingPool;
+        this.numberOfFloor = numberOfFloor;
+    }
+
+    public String getRoomStandard() {
+        return roomStandard;
+    }
+
+    public String getFacilites() {
+        return facilites;
+    }
+
+    public Float getAreaSwimmingPool() {
+        return areaSwimmingPool;
+    }
+
+    public int getnumberOfFloor() {
+        return numberOfFloor;
+    }
+
+    public void setRoomStandard(String roomStandard) {
+        this.roomStandard = roomStandard;
+    }
+
+    public void setFacilites(String facilites) {
+        this.facilites = facilites;
+    }
+
+    public void setAreaSwimmingPool(float areaSwimmingPool) {
+        this.areaSwimmingPool = areaSwimmingPool;
+    }
+
+    public void setnumberOfFloor(int numberOfFloor) {
+        this.numberOfFloor = numberOfFloor;
     }
 
     @Override
-    public void showInfor() {
-        System.out.println(this.toString());
-    }
-
-    @Override
-    public String toString() {
-        return "Villa{" +
-                "standardRoom='" + standardRoom + '\'' +
-                ", otherDescription='" + otherDescription + '\'' +
-                ", areaPool=" + areaPool +
-                ", numberOfFloors=" + numberOfFloors +
-                '}' + super.toString();
+    public String showInfor() {
+        return "***************** VILLA *****************" + super.toString() +
+                "\nRoomStandard: " + roomStandard
+                + "\nFacilities: " + facilites
+                + "\nArea of SwimmingPool: " + areaSwimmingPool
+                + "\nNumber of Floor: " + numberOfFloor;
     }
 }

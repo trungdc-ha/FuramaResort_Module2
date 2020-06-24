@@ -1,91 +1,81 @@
 package models;
 
-/*
-    1.Xây dựng abstract class Services (dịch vụ) bao gồm các thông tin chung của tất cả dịch vụ cho thuê Villa, House, Room.
-    (trong class Services lưu ý thêm thuộc tính id kiểu dữ liệu String và các class này được tạo trong package models)
-    2.	Xây dựng abstract method có tên là showInfor() trong Services class để hiển thị thông tin của mỗi dịch vụ cho thuê.
-*/
-
 public abstract class Services {
-    protected String id;
-    protected String serviceName;
-    protected double areaUse;
-    protected double rentCost;
-    protected int numberOfPeoples;
-    protected String typeRent;
-
-    public Services(String id, String serviceName, double areaUse, double rentCost, int numberOfPeoples, String typeRent) {
-        this.id = id;
-        this.serviceName = serviceName;
-        this.areaUse = areaUse;
-        this.rentCost = rentCost;
-        this.numberOfPeoples = numberOfPeoples;
-        this.typeRent = typeRent;
-    }
+    private String id;
+    private String serviceName;
+    private float areaUsing;
+    private double rentalFee;
+    private int maxOccupancy;
+    private String typeRental;
 
     public Services() {
+    }
 
+    public Services(String id, String serviceName, float areaUsing, double rentalFee, int maxOccupancy, String typeRental) {
+        this.id = id;
+        this.serviceName = serviceName;
+        this.areaUsing = areaUsing;
+        this.rentalFee = rentalFee;
+        this.maxOccupancy = maxOccupancy;
+        this.typeRental = typeRental;
     }
 
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getServiceName() {
         return serviceName;
+    }
+
+    public float getAreaUsing() {
+        return areaUsing;
+    }
+
+    public double getrentalFee() {
+        return rentalFee;
+    }
+
+    public int getmaxOccupancy() {
+        return maxOccupancy;
+    }
+
+    public String getTypeRental() {
+        return typeRental;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
 
-    public double getAreaUse() {
-        return areaUse;
+    public void setAreaUsing(float areaUsing) {
+        this.areaUsing = areaUsing;
     }
 
-    public void setAreaUse(double areaUse) {
-        this.areaUse = areaUse;
+    public void setrentalFee(double rentalFee) {
+        this.rentalFee = rentalFee;
     }
 
-    public double getRentCost() {
-        return rentCost;
+    public void setmaxOccupancy(int maxOccupancy) {
+        this.maxOccupancy = maxOccupancy;
     }
 
-    public void setRentCost(double rentCost) {
-        this.rentCost = rentCost;
+    public void setTypeRental(String typeRental) {
+        this.typeRental = typeRental;
     }
 
-    public int getNumberOfPeoples() {
-        return numberOfPeoples;
-    }
+    public abstract String showInfor();
 
-    public void setNumberOfPeoples(int numberOfPeoples) {
-        this.numberOfPeoples = numberOfPeoples;
-    }
-
-    public String getTypeRent() {
-        return typeRent;
-    }
-
-    public void setTypeRent(String typeRent) {
-        this.typeRent = typeRent;
-    }
-
-    public abstract void showInfor();
-
-    @Override
     public String toString() {
-        return "Services{" +
-                "id='" + id + '\'' +
-                ", serviceName='" + serviceName + '\'' +
-                ", areaUse=" + areaUse +
-                ", rentCost=" + rentCost +
-                ", numberOfPeoples=" + numberOfPeoples +
-                ", typeRent='" + typeRent + '\'' +
-                '}';
+        return "\nID: " + id
+                + "\nServiceName: " + serviceName
+                +"\nArea Using: " + areaUsing
+                + "\nRental Fee: " + rentalFee
+                +"\nMax Occupancy: " + maxOccupancy
+                +"\nType of Rental: " + typeRental;
     }
 }
